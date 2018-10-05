@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="72px" viewBox="0 0 70 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook-messenger-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="6.76%" x2="50%" y2="95.6%" id="linearGradient-1">
+            <stop stop-color="#00C6FF" offset="0%"></stop>
+            <stop stop-color="#0068FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="facebook-messenger-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Facebook_Messenger_logo" fill-rule="nonzero">
+            <path d="M12.8921875,59.1037168 L12.8921875,71.9107965 L24.63875,65.1026549 C27.913125,66.0647788 31.39375,66.5840708 35,66.5840708 C54.33125,66.5840708 70,51.6775221 70,33.2920354 C70,14.9052743 54.33125,2.84217094e-14 35,2.84217094e-14 C15.67,2.84217094e-14 0,14.9052743 0,33.2920354 C0,43.7033628 5.024375,52.999646 12.8921875,59.1037168 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+            <polygon id="Shape" fill="#FFFFFF" points="31.2625 24.1735221 12.3871875 44.5476106 29.5653125 34.939115 38.540625 44.5476106 57.309375 24.1735221 40.321875 33.6138053 31.2625 24.1735221"></polygon>
+        </g>
+    </g>
+</svg>
