@@ -6,8 +6,10 @@ $family-sans-serif: "Poppins", sans-serif;
 
 $primary: #ff6669;
 
-$size-large: 1.125rem;
+// $size-large: 1.125rem;
+
 $button-padding-horizontal: 1.75rem; 
+$button-border-color: #223d65;
 
 $navbar-item-img-max-height: 3.25rem;
 $navbar-height: 7.25rem;
@@ -19,7 +21,7 @@ $title-color: #223d65;
 $subtitle-color: rgba(#223d65, 0.5);
 $subtitle-size: 1.125rem;
 
-$control-radius: 0.375rem;
+$control-radius: 0.25rem;
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 
@@ -58,19 +60,17 @@ $control-radius: 0.375rem;
 
 .teaser-section {
 	position: relative;
-	background-color: $primary;
 	padding-bottom: 100px;
 
 	&::before {
+		content: '';
+	    background: $primary;
 		position: absolute;
-		content: "";
-		display: block;
-		left: 0;
-		top: -80px;
-		width: 100%;
-		border-style: solid;
-		border-width: 170px 100vw 0 0;
-		border-color: #fff $primary #fff #fff;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    transform: skewY(-5deg);
 	}
 }
 
@@ -84,11 +84,101 @@ $control-radius: 0.375rem;
 	width: 300px;
 	box-shadow: 0 0 24px 0 rgba(0,0,0,0.30), inset 0 -4px 8px 0 rgba(0, 0, 0, 0.08);
 	border-radius: 44.1px;
-	transform: translate(-50px, 50px);
 }
 
-.button {
-	text-transform: uppercase;
+.iphone-examples {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	transform: translateY(50px);
+}
+
+.iphone-example-screen {
+	box-shadow: 0 0 24px 0 rgba(0,0,0,0.30), inset 0 -4px 8px 0 rgba(0, 0, 0, 0.08);
+	border-radius: 44.1px;
+	width: 300px;
+
+	&:nth-child(1) {
+		transform: translate(90px, 80px);
+		z-index: 0;
+	}
+
+	&:nth-child(2) {
+		//
+	}
+}
+
+.dashboard-examples {
+	position: relative;
+}
+
+.dashboard-example {
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.15);
+}
+
+.dashboard-example-zoomed {
+	box-shadow: 0 0 8px 0 rgba(0,0,0,0.20);
+	border-radius: 7px;
+	position: absolute;
+	top: 20%;
+	width: 100%;
+	transform: translateX(10%);
+}
+
+.supported-platforms {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+    align-items: stretch;
+
+	.supported-platform {
+		margin: 0.375rem 0;
+		display: flex;
+		justify-content: center;
+
+		&:nth-child(3) {
+			transform: translateX(50px);
+		}
+	}
+
+	img {
+		background: #FFFFFF;
+		box-shadow: 0 0 25px 0 rgba(0,0,0,0.15);
+		border-radius: 9px;
+		padding: 1rem 2.5rem;
+		margin: 0 0.75rem;
+		max-width: 40%;
+	}
+}
+
+.supported-shops {
+	.columns {
+		margin: 0;
+	}
+
+	img {
+		background: #FFFFFF;
+		box-shadow: 0 0 25px 0 rgba(0,0,0,0.15);
+		border-radius: 9px;
+		padding: 1rem 2.5rem;
+		margin: 0 0.75rem;
+	}
+}
+
+.content-section {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background: #fff;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height:  200px;
+		transform: skewY(-5deg);
+		border-top: 1px solid rgba($primary, 0.2);
+	}
 }
 
 .messenger-bubble {
@@ -100,38 +190,54 @@ $control-radius: 0.375rem;
 	align-items: center;
 	position: absolute;
 	z-index: 10;
-
-	&:nth-child(1) {
-		transform: translate(120px, 40px);
-		top: 0;
-	}
-	&:nth-child(2) {
-		transform: translate(0, 50px);
-		top: 0;
-		right: 0;
-	}
-	&:nth-child(3) {
-		transform: translate(60px, 90px);
-		bottom: 0;
-	}
-	&:nth-child(4) {
-		transform: translate(-50px, 50px);
-		bottom: 0;
-		right: 0;
-	}
 }
 
-.messenger-bubble--small {
-	width: 75px;
-	height: 75px;
+.pricing-plan {
+	background: #FFFFFF;
+	border: 1px solid rgba(34, 61, 101, 0.1);
+	box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	text-align: center;
+	color: #223D65;
 }
 
-.messenger-bubble--medium {
-	width: 95px;
-	height: 95px;
+.plan-header {
+	text-transform: uppercase;
+	font-size: 1.125rem;
+	padding: 2rem;
+	color: #223D65;
+	font-weight: 500;
 }
 
-.messenger-bubble--large {
-	width: 120px;
-	height: 120px;
+.plan-price {
+	background-color: rgba(#223D65, 0.03);
+	border-bottom: 1px solid rgba(#223D65, 0.07);
+}
+
+.plan-price-amount {
+	font-size: 4rem;
+}
+
+.plan-price-currency {
+	font-size: 1rem;
+	vertical-align: super;
+	transform: translateY(1rem);
+}
+
+.plan-items {
+	padding: 3rem 0;
+}
+
+.plan-item {
+	padding: 0.75rem 0;
+}
+
+.plan-button {
+	font-size: 1rem;
+	padding: 1.5rem 0;
+}
+
+.plan-footer {
+	margin-bottom: 2rem;
+	padding: 0 4rem;
 }
