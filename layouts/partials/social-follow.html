@@ -1,37 +1,37 @@
 <!-- TODO: Add follow intents where available TODO: Revisit color and hover color -->
-{{ $icon_size := "32px" }}
+{{ $icon_size := "16px" }}
 {{ with .Param "facebook" }}
-  <a href="{{ . }}" class="" title="Facebook link">
-    {{ partial "svg/facebook.svg" (dict "size" $icon_size) }}
+  <a href="{{ . }}" class="social-icon" title="Facebook link">
+    {{ partial "svg/facebook-icon.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}
 {{ with .Param "twitter" }}
-  <a href="{{ . }}" class="" title="Twitter link">
-    {{ partial "svg/twitter.svg" (dict "size" $icon_size) }}
+  <a href="{{ . }}" class="social-icon" title="Twitter link">
+    {{ partial "svg/twitter-icon.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}
 {{ with .Param "instagram" }}
-  <a href="{{ . }}" class="" title="Instagram link">
-    {{ partial "svg/instagram.svg" (dict "size" $icon_size) }}
+  <a href="{{ . }}" class="social-icon" title="Instagram link">
+    {{ partial "svg/instagram-icon.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}
 {{ with .Param "youtube" }}
-  <a href="{{ . }}" class="" title="Youtube link">
-    {{ partial "svg/youtube.svg" (dict "size" $icon_size) }}
+  <a href="{{ . }}" class="social-icon" title="Youtube link">
+    {{ partial "svg/youtube-icon.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}
 {{ with .Param "linkedin" }}
-  <a href="{{ . }}" class="" title="LinkedIn link">
+  <a href="{{ . }}" class="social-icon" title="LinkedIn link">
     {{ partial "svg/linkedin.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}
 {{ with .Param "github" }}
-  <a href="{{ . }}" class="" title="Github link">
-    {{ partial "svg/github.svg" (dict "size" $icon_size) }}
+  <a href="{{ . }}" class="social-icon" title="Github link">
+    {{ partial "svg/github-icon.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}
 {{ with .Param "gitlab" }}
-  <a href="{{ . }}" class="" title="Gitlab link">
-    {{ partial "svg/gitlab.svg" (dict "size" $icon_size) }}
+  <a href="{{ . }}" class="social-icon" title="Gitlab link">
+    {{ partial "svg/gitlab-icon.svg" (dict "size" $icon_size) }}
   </a>
 {{ end }}

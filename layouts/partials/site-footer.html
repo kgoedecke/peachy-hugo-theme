@@ -1,8 +1,21 @@
-<footer class="" role="contentinfo">
-  <div class="">
-  <a class="" href="{{ .Site.BaseURL }}" >
-    &copy; {{ now.Format "2006" }} {{ .Site.Title }}
-  </a>
-    <div>{{ partial "social-follow.html" . }}</div>
+<footer class="footer is-primary is-small" role="contentinfo">
+  <div class="container">
+  	<div class="columns">
+  		<div class="column is-one-quarter">
+  			<img src="/images/reachpeach-white.svg">
+  			<div class="slogan">
+  				{{ .Site.Params.slogan }}
+  			</div>
+  			<div class="social-icons">
+  				{{ partial "social-follow.html" . }}
+  			</div>
+  			<a class="copyright" href="{{ .Site.BaseURL }}" >
+			    &copy; {{ now.Format "2006" }} {{ .Site.Params.company }}
+			  </a>
+  		</div>
+  		<div class="column  is-half is-offset-one-quarter">
+  			{{ partial "site-navigation-footer.html" . }}	
+  		</div>
+  	</div>
   </div>
 </footer>

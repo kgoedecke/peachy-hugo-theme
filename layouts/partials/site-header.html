@@ -2,11 +2,11 @@
 {{ if $featured_image }}
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
   {{ $featured_image := (trim $featured_image "/") | absURL }}
-  <header class="">x
+  <header class="">
     {{ $featured_image }}
   </header>
 {{ else }}
-  <header class="container">x
+  <header class="container">
     {{ partial "site-navigation.html" . }}
   </header>
 {{ end }}

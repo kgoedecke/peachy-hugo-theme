@@ -24,7 +24,9 @@ module.exports = {
 				test: /\.css$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: 'css-loader?importLoaders=1!postcss-loader'
+					use: [
+						{ loader: 'css-loader?importLoaders=1!postcss-loader', options: { minimize: true } }
+					]
 				})
 			},
 			{
@@ -33,7 +35,8 @@ module.exports = {
 					fallback: 'style-loader',
 					use: [{
 						loader: "css-loader", options: {
-							sourceMap: true
+							sourceMap: true,
+							minimize: true
 						}
 					}, {
 						loader: "sass-loader", options: {
@@ -65,7 +68,7 @@ module.exports = {
 				return getPath('css/[name].[contenthash].css');
 			},
 			allChunks: true
-		})
+		}),
 	],
 	watchOptions: {
 		watch: true

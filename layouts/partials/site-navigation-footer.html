@@ -1,0 +1,22 @@
+<nav class="footer-navbar is-transparent columns" role="navigation">
+      <div class="footer-navbar-menu column">
+        {{ if .Site.Menus.footer }}
+            {{ range .Site.Menus.footer }}
+              <a class="navbar-item" href="{{ .URL }}" title="{{ .Name }}">
+                {{ .Name }}
+              </a>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+      <div class="column">
+        {{ if .Site.Menus.footer2 }}
+            {{ range .Site.Menus.footer2 }}
+              <a class="navbar-item" href="{{ .URL }}" title="{{ .Name }}">
+                {{ .Name }}
+              </a>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+</nav>
