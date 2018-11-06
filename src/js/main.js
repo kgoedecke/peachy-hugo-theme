@@ -1,4 +1,7 @@
-// import styles from './../css/main.css';
+import MicroModal from 'micromodal';
+
+MicroModal.init();
+
 require('./../scss/main.scss');
 
 
@@ -18,6 +21,53 @@ var $ = require('jquery/src/jquery');
 
 $(document).ready(function() {
 
+	 $('.cancel-button').click(function(e) {
+      	$('#modal-1').removeClass('is-open');
+      	e.preventDefault();
+      });
+	 
+
+
+	$('.modal__form--beta').submit(function(e) {
+      let formHubspotFormId = $(this).data('hubspot-form-id');
+      let hubspotPortalId = '5106615';
+      let formPostUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${hubspotPortalId}/${formHubspotFormId}`;
+
+      let formData = $(this).serializeArray();
+      let form = $(this);
+
+      $.ajax(
+	          {
+	            url: formPostUrl,
+	            type: 'POST',
+	            contentType: 'application/json',
+	            dataType: 'json',
+	            data: JSON.stringify({
+	              'context': {
+	              'pageUri': window.location.href,
+	              'pageName': document.title,
+	              },
+	              'submittedAt': Date.now(),
+	              'fields': formData,
+	            }),
+	            success: (msg) => {
+	            	console.log(msg);
+	            	$('.message-body').addClass('is-hidden');
+	            	$('#modal-1').removeClass('is-open');
+	              // Close Dialog
+	              // TODO: Handle errors properly
+	            },
+	            error: function(XMLHttpRequest, textStatus, errorThrown) {
+	            	var err = eval("(" + XMLHttpRequest.responseText + ")");
+	            	console.log(err.errors);
+	            	let errorMsgs = err.errors.map(e => e.message.split('.')[2]).join("<br>");
+	            	$('.message-body').removeClass('is-hidden');
+				    $('.message-body').html(errorMsgs);
+				  }
+	          });
+      e.preventDefault();
+	    });
+
   // Check for click events on the navbar burger icon
   $(".navbar-burger").click(function() {
 
@@ -25,5 +75,9 @@ $(document).ready(function() {
       $(".navbar-burger").toggleClass("is-active");
       $(".navbar-menu").toggleClass("is-active");
 
+
+
   });
 });
+
+
