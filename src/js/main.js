@@ -26,7 +26,10 @@ $(document).ready(function() {
       	e.preventDefault();
       });
 	 
-
+	 $('a[href="/#sign-up"]').click(function(e) {
+	 	MicroModal.show('modal-1');
+	 	e.preventDefault();
+	 });
 
 	$('.modal__form--beta').submit(function(e) {
       let formHubspotFormId = $(this).data('hubspot-form-id');
@@ -51,15 +54,11 @@ $(document).ready(function() {
 	              'fields': formData,
 	            }),
 	            success: (msg) => {
-	            	console.log(msg);
 	            	$('.message-body').addClass('is-hidden');
-	            	$('#modal-1').removeClass('is-open');
-	              // Close Dialog
-	              // TODO: Handle errors properly
+	            	MicroModal.close();
 	            },
 	            error: function(XMLHttpRequest, textStatus, errorThrown) {
 	            	var err = eval("(" + XMLHttpRequest.responseText + ")");
-	            	console.log(err.errors);
 	            	let errorMsgs = err.errors.map(e => e.message.split('.')[2]).join("<br>");
 	            	$('.message-body').removeClass('is-hidden');
 				    $('.message-body').html(errorMsgs);
